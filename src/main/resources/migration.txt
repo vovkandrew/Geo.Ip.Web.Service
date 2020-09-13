@@ -1,0 +1,22 @@
+-- Table: public.location
+
+-- DROP TABLE public.location;
+
+CREATE TABLE public.location
+(
+    location_id bigint NOT NULL DEFAULT nextval('location_location_id_seq'::regclass),
+    city_name character varying(255) COLLATE pg_catalog."default",
+    country_code character varying(255) COLLATE pg_catalog."default",
+    country_name character varying(255) COLLATE pg_catalog."default",
+    ip_from integer NOT NULL,
+    ip_to integer NOT NULL,
+    latitude double precision NOT NULL,
+    longitude double precision NOT NULL,
+    region_name character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT location_pkey PRIMARY KEY (location_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.location
+    OWNER to postgres;
